@@ -29,7 +29,6 @@ class EducationalVideoController extends Controller {
             if ($model->validate()) {
                 $checkData = $model->result;
                 $result = VideoQueezHelper::checkIfAnswersCorrect($checkData);
-                var_dump($result);
                 if ($result[0]) {
                     VideoQueezHelper::setQueezAsPassed($queezId, $userGuid);
                     $this->refresh();
